@@ -278,7 +278,7 @@
         answer = "I'm a Chat bot from Red-X Corporation.";
         break;
       case "Q: Who created this ChatBot?":
-        answer = "This web page was created by Mohtasim Billah Jitu, Founder of RED-X CORPORATION.";
+        answer = "This chat bot is created by Mohtasim Billah Jitu, Founder of RED-X CORPORATION.";
         break;
       case "Q: What is RED-X?":
         answer = "RED-X is a tech-focused team specializing in automation, AI tools, and gaming solutions.";
@@ -477,4 +477,5 @@
   
   // Set up scroll listener
   chatContainer.addEventListener('scroll', handleHeaderScroll);
+
 })();
