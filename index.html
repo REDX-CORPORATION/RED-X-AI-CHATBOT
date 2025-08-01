@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>RED-X BASIC AI CHATBOT | v1.01</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -121,7 +121,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 2rem;
+      padding: 1rem;
       z-index: 1000;
       user-select: text;
     }
@@ -129,8 +129,9 @@
     #welcomeContent {
       background: var(--user-msg-bg-dark);
       border-radius: 16px;
-      padding: 3rem 3.5rem;
-      max-width: 480px;
+      padding: 2rem;
+      max-width: 90%;
+      width: 480px;
       box-shadow: inset 0 0 25px var(--red-dark), 0 0 30px rgba(255, 0, 0, 0.4);
       text-align: center;
       color: var(--text-color);
@@ -160,33 +161,34 @@
     #welcomeContent h1 {
       font-family: 'Orbitron', sans-serif;
       font-weight: 800;
-      font-size: 2.4rem;
-      margin-bottom: 1.2rem;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
       letter-spacing: 0.04em;
       text-shadow: 0 0 10px var(--red-glow), 0 0 20px var(--red-glow);
     }
 
     #welcomeContent p {
-      font-size: 1.05rem;
+      font-size: 1rem;
       line-height: 1.5;
-      margin-bottom: 1.6rem;
+      margin-bottom: 1.2rem;
       color: var(--red-light);
       font-weight: 500;
     }
 
     #welcomeContent ul {
       text-align: left;
-      margin-bottom: 1.6rem;
+      margin-bottom: 1.5rem;
       list-style: inside disc;
       color: var(--red-light);
       font-weight: 600;
+      padding: 0 1rem;
     }
 
     #startChatBtn {
       background: linear-gradient(135deg, var(--red-base), var(--red-dark));
       border: none;
-      padding: 1rem 2.8rem;
-      font-size: 1.2rem;
+      padding: 0.9rem 2.2rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: #fff;
       border-radius: 50px;
@@ -199,7 +201,7 @@
       position: relative;
       overflow: hidden;
       z-index: 1;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.2rem;
     }
     #startChatBtn::before {
       content: '';
@@ -225,13 +227,13 @@
     .social-icons {
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
+      gap: 1.2rem;
       margin-top: 1rem;
     }
     
     .social-icon {
-      width: 42px;
-      height: 42px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       text-decoration: none;
       display: flex;
@@ -239,7 +241,7 @@
       justify-content: center;
       background: rgba(184, 50, 50, 0.2);
       color: var(--red-light);
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       transition: all 0.3s ease;
       box-shadow: 0 0 10px rgba(184, 50, 50, 0.3);
     }
@@ -257,7 +259,7 @@
       display: flex;
       flex-direction: column;
       background: var(--panel-bg-dark);
-      padding: 1rem 1.8rem;
+      padding: 1rem;
       overflow: hidden;
       opacity: 0;
       pointer-events: none;
@@ -283,16 +285,16 @@
     header {
       font-family: 'Orbitron', sans-serif;
       font-weight: 700;
-      font-size: 1.7rem;
+      font-size: 1.5rem;
       color: var(--red-base);
       text-align: center;
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
       user-select: none;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
-      gap: 1rem;
-      padding: 0.8rem 0;
+      gap: 0.6rem;
+      padding: 0.7rem 0;
       text-shadow: 0 0 8px var(--red-glow);
       position: sticky;
       top: 0;
@@ -325,8 +327,8 @@
     /* Header buttons container */
     .header-buttons {
       display: flex;
-      flex-wrap: wrap; /* Added for mobile wrapping */
-      gap: 0.8rem; /* Added spacing between buttons */
+      flex-wrap: wrap;
+      gap: 0.8rem;
       justify-content: center;
       align-items: center;
     }
@@ -337,8 +339,8 @@
       overflow-y: auto;
       display: flex;
       flex-direction: column;
-      gap: 1.2rem;
-      padding: 1rem 6px 1rem 0;
+      gap: 1rem;
+      padding: 0.8rem 4px 0.8rem 0;
       scroll-behavior: smooth;
       scrollbar-width: thin;
       scrollbar-color: var(--red-base) transparent;
@@ -350,7 +352,7 @@
       user-select: text;
     }
     .chat-container::-webkit-scrollbar {
-      width: 8px;
+      width: 6px;
     }
     .chat-container::-webkit-scrollbar-thumb {
       background: var(--red-base);
@@ -363,8 +365,8 @@
 
     /* Message bubble styling */
     .message {
-      max-width: 85%;
-      padding: 1.2rem 1.5rem;
+      max-width: 92%;
+      padding: 1rem;
       border-radius: 16px;
       word-wrap: break-word;
       position: relative;
@@ -425,8 +427,8 @@
     .math-content {
       background: rgba(0, 0, 0, 0.2);
       border-radius: 10px;
-      padding: 1.2rem;
-      margin: 0.8rem 0;
+      padding: 1rem;
+      margin: 0.7rem 0;
       border: 1px solid var(--border-color);
     }
     
@@ -440,12 +442,12 @@
       margin-bottom: 0.5rem;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
     
     .math-step {
-      margin: 0.7rem 0;
-      padding-left: 1.2rem;
+      margin: 0.6rem 0;
+      padding-left: 1rem;
       position: relative;
     }
     
@@ -457,10 +459,10 @@
     }
     
     .math-formula {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       text-align: center;
-      margin: 1rem 0;
-      padding: 0.8rem;
+      margin: 0.9rem 0;
+      padding: 0.7rem;
       background: rgba(0, 0, 0, 0.3);
       border-radius: 8px;
       font-family: 'Inter', sans-serif;
@@ -474,18 +476,18 @@
       background: rgba(184, 50, 50, 0.2);
       border: 2px solid var(--red-base);
       border-radius: 12px;
-      padding: 1.2rem;
-      margin-top: 1.2rem;
+      padding: 1rem;
+      margin-top: 1rem;
       text-align: center;
       font-weight: bold;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       box-shadow: 0 0 15px rgba(184, 50, 50, 0.3);
     }
     
     .math-table {
       width: 100%;
       border-collapse: collapse;
-      margin: 1rem 0;
+      margin: 0.9rem 0;
       background: rgba(0, 0, 0, 0.15);
     }
     
@@ -495,13 +497,13 @@
     
     .math-table th {
       background: rgba(184, 50, 50, 0.3);
-      padding: 0.6rem;
+      padding: 0.5rem;
       text-align: left;
       border: 1px solid var(--border-color);
     }
     
     .math-table td {
-      padding: 0.6rem;
+      padding: 0.5rem;
       border: 1px solid var(--border-color);
     }
     
@@ -518,12 +520,12 @@
       position: relative;
       background: rgba(0, 0, 0, 0.7);
       border-radius: 8px;
-      padding: 1.2rem;
+      padding: 1rem;
       overflow-x: auto;
-      margin: 1rem 0;
+      margin: 0.9rem 0;
       border: 1px solid var(--border-color);
       font-family: 'Courier New', monospace;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       line-height: 1.4;
     }
     
@@ -541,7 +543,7 @@
       color: var(--red-light);
       border-radius: 4px;
       padding: 4px 8px;
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       cursor: pointer;
       transition: all 0.2s ease;
       opacity: 0;
@@ -566,7 +568,7 @@
       color: white;
       border-radius: 4px;
       padding: 4px 8px;
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       animation: fadeOut 1.5s forwards;
     }
     
@@ -579,7 +581,7 @@
     code {
       font-family: 'Courier New', monospace;
       background: rgba(0, 0, 0, 0.3);
-      padding: 2px 6px;
+      padding: 2px 5px;
       border-radius: 4px;
       border: 1px solid var(--border-color);
     }
@@ -603,11 +605,12 @@
       white-space: nowrap;
       opacity: 1;
       transform: translateY(0);
+      margin: 0.5rem 0;
     }
     .loading-dots span {
       display: inline-block;
-      width: 8px;
-      height: 8px;
+      width: 7px;
+      height: 7px;
       margin-right: 4px;
       background: var(--red-base);
       border-radius: 50%;
@@ -638,7 +641,7 @@
     /* Input area */
     .input-area {
       display: flex;
-      padding: 1rem 1.8rem;
+      padding: 1rem;
       background: var(--input-bg-dark);
       border-top: 1.5px solid var(--red-base);
       align-items: center;
@@ -646,6 +649,7 @@
       border-radius: 0 0 20px 20px;
       position: relative;
       z-index: 10;
+      flex-wrap: wrap;
     }
     body[data-theme="light"] .input-area {
       background: var(--input-bg-light);
@@ -653,8 +657,8 @@
     }
     .input-area input {
       flex: 1;
-      padding: 0.9rem 1.3rem;
-      font-size: 1.1rem;
+      padding: 0.8rem 1.2rem;
+      font-size: 1rem;
       border-radius: 50px;
       border: 1.5px solid var(--border-color);
       outline: none;
@@ -666,6 +670,7 @@
       letter-spacing: 0.03em;
       user-select: text;
       caret-color: var(--red-base);
+      min-width: 0;
     }
     body[data-theme="light"] .input-area input {
       background: var(--input-bg-light);
@@ -684,14 +689,14 @@
       box-shadow: 0 0 16px rgba(184, 50, 50, 0.4);
     }
     .input-area button {
-      margin-left: 1rem;
+      margin-left: 0.7rem;
       background: linear-gradient(135deg, var(--red-base), var(--red-dark));
       border: none;
       border-radius: 50px;
-      padding: 0.9rem 2rem;
+      padding: 0.8rem 1.6rem;
       color: #f5dada;
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 1rem;
       cursor: pointer;
       box-shadow: 0 0 15px var(--red-base);
       transition: all 0.3s ease;
@@ -701,6 +706,7 @@
       font-family: 'Orbitron', sans-serif;
       position: relative;
       overflow: hidden;
+      min-width: 90px;
     }
     .input-area button::before {
       content: '';
@@ -723,15 +729,15 @@
 
     /* Mic button */
     .mic-btn {
-      margin-left: 0.8rem;
+      margin-left: 0.7rem;
       background: var(--red-base);
       border-radius: 50%;
       border: none;
-      width: 38px;
-      height: 38px;
+      width: 40px;
+      height: 40px;
       cursor: pointer;
       color: #fff;
-      font-size: 20px;
+      font-size: 18px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -772,13 +778,13 @@
     /* Listening indicator */
     .listening-indicator {
       position: absolute;
-      top: -40px;
-      right: 0;
+      top: -35px;
+      right: 10px;
       background: rgba(184, 50, 50, 0.8);
       color: white;
-      padding: 0.5rem 1rem;
+      padding: 0.4rem 0.8rem;
       border-radius: 20px;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -788,8 +794,8 @@
     
     .listening-indicator::before {
       content: '';
-      width: 10px;
-      height: 10px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: #ff3a3a;
       animation: pulse 1s infinite;
@@ -806,7 +812,7 @@
       background: linear-gradient(135deg, #7a1b1b, #b83232);
       border: none;
       border-radius: 30px;
-      padding: 0.5rem 1.1rem;
+      padding: 0.5rem 1rem;
       font-weight: 600;
       color: #f4d4d4;
       cursor: pointer;
@@ -820,8 +826,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      min-width: 110px; /* Added min-width for mobile */
+      min-width: 100px;
       font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
     }
     
     #exportBtn::before, .toggle-theme::before {
@@ -847,23 +854,22 @@
 
     /* Toggle theme button */
     .toggle-theme {
-      font-size: 1rem;
-      min-width: 120px; /* Added min-width for mobile */
+      min-width: 110px;
       display: flex;
-      gap: 8px;
+      gap: 6px;
       align-items: center;
     }
     
     .toggle-theme i {
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
 
     /* Footer with credit */
     footer {
       background: var(--user-msg-bg-dark);
       text-align: center;
-      padding: 0.7rem 0;
-      font-size: 0.85rem;
+      padding: 0.6rem 0;
+      font-size: 0.8rem;
       color: #8b2929;
       user-select: none;
       border-top: 1.5px solid var(--border-color);
@@ -896,9 +902,9 @@
     .chat-quick-questions {
       display: flex;
       flex-direction: column;
-      gap: 0.8rem;
-      margin-top: 0.8rem;
-      width: 350px; /* adjust this value */
+      gap: 0.7rem;
+      margin-top: 0.7rem;
+      width: 100%;
     }
     
     .chat-quick-btn {
@@ -906,9 +912,9 @@
       background: rgba(184, 50, 50, 0.2);
       border: 1px solid var(--red-base);
       border-radius: 12px;
-      padding: 0.8rem 1.2rem;
+      padding: 0.7rem 1rem;
       color: var(--red-light);
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       cursor: pointer;
       transition: all 0.2s ease;
       text-align: left;
@@ -927,7 +933,7 @@
     .chat-quick-btn::after {
       content: '→';
       position: absolute;
-      right: 15px;
+      right: 12px;
       top: 50%;
       transform: translateY(-50%);
       font-weight: bold;
@@ -939,37 +945,121 @@
       transform: translateY(-50%) translateX(3px);
     }
 
+    /* Mobile-specific fixes */
     @media (max-width: 600px) {
-      .message {
-        max-width: 90%;
+      #welcomeContent {
+        padding: 1.5rem;
       }
-      header {
-        flex-direction: column;
-        gap: 0.5rem;
+      
+      #welcomeContent h1 {
+        font-size: 1.8rem;
       }
-      .header-buttons {
-        width: 100%;
-        justify-content: center;
+      
+      #welcomeContent p {
+        font-size: 0.95rem;
       }
-      #exportBtn, .toggle-theme {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
-        min-width: 110px;
-      }
-      .input-area button, .mic-btn {
-        margin-left: 0.4rem;
-        padding: 0.7rem 1.2rem;
+      
+      #startChatBtn {
+        padding: 0.8rem 1.8rem;
         font-size: 1rem;
       }
-      .toggle-theme {
-        margin-left: 0;
-      }
-      #welcomeContent {
-        padding: 2rem;
-      }
+      
       .social-icons {
         gap: 1rem;
       }
+      
+      .social-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+      }
+      
+      header {
+        padding: 0.6rem 0.5rem;
+      }
+      
+      .header-buttons {
+        gap: 0.6rem;
+      }
+      
+      #exportBtn, .toggle-theme {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.85rem;
+        min-width: 90px;
+      }
+      
+      .input-area {
+        padding: 0.8rem;
+      }
+      
+      .input-area input {
+        padding: 0.7rem 1.1rem;
+        font-size: 0.95rem;
+      }
+      
+      .input-area button {
+        padding: 0.7rem 1.4rem;
+        font-size: 0.95rem;
+        min-width: 80px;
+      }
+      
+      .mic-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+      }
+      
+      .message {
+        padding: 0.9rem;
+        font-size: 0.95rem;
+      }
+      
+      .chat-quick-btn {
+        padding: 0.6rem 0.9rem;
+        font-size: 0.85rem;
+      }
+      
+      .listening-indicator {
+        top: -32px;
+        right: 8px;
+        font-size: 0.8rem;
+        padding: 0.3rem 0.7rem;
+      }
+    }
+    
+    /* Tablet landscape fixes */
+    @media (min-width: 601px) and (max-width: 1024px) and (orientation: landscape) {
+      #app {
+        min-height: 100vh;
+        height: auto;
+      }
+      
+      #welcomeContent {
+        max-height: 90vh;
+        overflow-y: auto;
+      }
+      
+      .input-area {
+        position: sticky;
+        bottom: 0;
+      }
+    }
+    
+    /* Prevent zoom on input focus */
+    input, select, textarea {
+      font-size: 16px;
+    }
+    
+    /* Touch area improvements */
+    button, .chat-quick-btn, .mic-btn, .social-icon {
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+    
+    /* Prevent text overflow */
+    .message {
+      overflow-wrap: break-word;
+      hyphens: auto;
     }
   </style>
 </head>
@@ -1014,7 +1104,7 @@
     <!-- Main Chat App -->
     <section id="chatApp" aria-live="polite" aria-relevant="additions" tabindex="0">
       <header>
-        <div>&nbsp&nbsp&nbsp RED-X AI ChatBot [Basic] <span style="font-size: 0.6em; color: silver;">v1.01</span></div>
+        <div>RED-X AI ChatBot [Basic] <span style="font-size: 0.6em; color: silver;">v1.01</span></div>
         <div class="header-buttons">
           <button id="exportBtn" aria-label="Export chat history">
             <i class="fas fa-file-export"></i> EXPORT
@@ -1031,13 +1121,13 @@
           id="messageInput"
           type="text"
           autocomplete="off"
-          placeholder="ENTER YOUR MESSAGE HERE..."
+          placeholder="ENTER YOUR MESSAGE..."
           aria-required="true"
           aria-label="Message input"
           spellcheck="false"
           />
         <button type="submit" aria-label="Send message">
-          <i class="fas fa-paper-plane"></i> SEND
+          <i class="fas fa-paper-plane"></i>
         </button>
         <button type="button" class="mic-btn" aria-label="Toggle voice input" title="Click to record">
           <i class="fas fa-microphone-alt" id="micIcon"></i>
@@ -1323,36 +1413,36 @@
       }
       
      // Handle quick question answers
-function handleQuickQuestion(question) {
-  let answer = "";
+      function handleQuickQuestion(question) {
+        let answer = "";
 
-  switch(question) {
-     case "Q: Who are you?":
-      answer = "I'm a Chat bot from Red-X Corporation.";
-      break;
-    case "Q: Who created this ChatBot?":
-      answer = "This web page was created by Mohtasim Billah Jitu, Founder of RED-X CORPORATION.";
-      break;
-    case "Q: What is RED-X?":
-      answer = "RED-X is a tech-focused team specializing in automation, AI tools, and gaming solutions.";
-      break;
-    case "Q: Who are the core members of RED-X?":
-      answer = `The core team includes:\n• Mohtasim Billah Jitu – Founder, CEO & Lead Developer\n• Ashik Limon – Chairman\n• Abdullah Bin Jubayer Raihan – Chief Developer(CTO)\n• Abid Hassan – Marketing & Client Relations\n• Samiul Islam & Sazid Islam Akash – Testing & Quality Assurance`;
-      break;
-    default:
-      return false;
-  }
+        switch(question) {
+          case "Q: Who are you?":
+            answer = "I'm a Chat bot from Red-X Corporation.";
+            break;
+          case "Q: Who created this ChatBot?":
+            answer = "This web page was created by Mohtasim Billah Jitu, Founder of RED-X CORPORATION.";
+            break;
+          case "Q: What is RED-X?":
+            answer = "RED-X is a tech-focused team specializing in automation, AI tools, and gaming solutions.";
+            break;
+          case "Q: Who are the core members of RED-X?":
+            answer = `The core team includes:\n• Mohtasim Billah Jitu – Founder, CEO & Lead Developer\n• Ashik Limon – Chairman\n• Abdullah Bin Jubayer Raihan – Chief Developer(CTO)\n• Abid Hassan – Marketing & Client Relations\n• Samiul Islam & Sazid Islam Akash – Testing & Quality Assurance`;
+            break;
+          default:
+            return false;
+        }
 
-  addMessage(question, 'user');
-  showLoading();
+        addMessage(question, 'user');
+        showLoading();
 
-  setTimeout(() => {
-    removeLoading();
-    addMessage(answer, 'bot');
-  }, 800);
+        setTimeout(() => {
+          removeLoading();
+          addMessage(answer, 'bot');
+        }, 800);
 
-  return true;
-}
+        return true;
+      }
 
       // Send message handler
       chatForm.onsubmit = async e => {
