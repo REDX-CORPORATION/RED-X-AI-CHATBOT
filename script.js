@@ -72,10 +72,10 @@
   // Add quick questions
   function addQuickQuestions() {
     const questions = [
-      "Q: Who are you?",
-      "Q: Who created this ChatBot?",
-      "Q: What is RED-X?",
-      "Q: Who are the core members of RED-X?"
+      "Who are you?",
+      "Who created this ChatBot?",
+      "What is RED-X?",
+      "Who are the core members of RED-X?"
     ];
     
     const messageEl = document.createElement('div');
@@ -274,16 +274,16 @@
     let answer = "";
 
     switch(question) {
-      case "Q: Who are you?":
+      case "Who are you?":
         answer = "I'm a Chat bot from Red-X Corporation.";
         break;
-      case "Q: Who created this ChatBot?":
+      case "Who created this ChatBot?":
         answer = "This chat bot is created by Mohtasim Billah Jitu, Founder of RED-X CORPORATION.";
         break;
-      case "Q: What is RED-X?":
+      case "What is RED-X?":
         answer = "RED-X is a tech-focused team specializing in automation, AI tools, and gaming solutions.";
         break;
-      case "Q: Who are the core members of RED-X?":
+      case "Who are the core members of RED-X?":
         answer = `The core team includes:\n• Mohtasim Billah Jitu – Founder, CEO & Lead Developer\n• Ashik Limon – Chairman\n• Abdullah Bin Jubayer Raihan – Chief Developer(CTO)\n• Abid Hassan – Marketing & Client Relations\n• Samiul Islam & Sazid Islam Akash – Testing & Quality Assurance`;
         break;
       default:
@@ -479,3 +479,4 @@
   chatContainer.addEventListener('scroll', handleHeaderScroll);
 
 })();
+
