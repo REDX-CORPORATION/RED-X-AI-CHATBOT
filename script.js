@@ -190,18 +190,20 @@
     }
   }
 
-  // ✅ UPDATED API HERE
   async function fetchAIResponse(message) {
-    const encodedMsg = encodeURIComponent(message);
-    const proxyUrl = `https://corsproxy.io/?https://princeaiapi.vercel.app/prince/api/v1/ask?key=prince&ask=${encodedMsg}`;
-    
-    showLoading();
-    await new Promise(resolve => setTimeout(resolve, 500));
-    const res = await fetch(proxyUrl);
-    if (!res.ok) throw new Error('Failed to get response');
-    const data = await res.json();
-    return data.response;
-  }
+  const encodedMsg = encodeURIComponent(message);
+  const proxyUrl = `https://corsproxy.io/?https://princeaiapi.vercel.app/prince/api/v1/ask?key=prince&ask=${encodedMsg}`;
+  
+  showLoading();
+  await new Promise(resolve => setTimeout(resolve, 500));
+  const res = await fetch(proxyUrl);
+  if (!res.ok) throw new Error('Failed to get response');
+  const data = await res.json();
+
+  // ✅ Updated line
+  return data.message?.content || "No response received from AI.";
+}
+
 
   function handleQuickQuestion(question) {
     let answer = "";
@@ -378,3 +380,4 @@
   originalPlaceholder = messageInput.placeholder;
   chatContainer.addEventListener('scroll', handleHeaderScroll);
 })();
+
