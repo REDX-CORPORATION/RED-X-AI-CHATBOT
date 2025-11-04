@@ -255,7 +255,8 @@
   // Fetch AI response from API using proxy to avoid CORS issues
   async function fetchAIResponse(message) {
     const encodedMsg = encodeURIComponent(message);
-    const proxyUrl = `https://corsproxy.io/?https://scromnyi-ai.vercel.app/chat?message=${encodedMsg}`;
+    //const proxyUrl = `https://corsproxy.io/?https://scromnyi-ai.vercel.app/chat?message=${encodedMsg}`;
+    const proxyUrl = `https://corsproxy.io/?https://princeaiapi.vercel.app/prince/api/v1/ask?key=prince&ask=${encodedMsg}`;
     
     // Show processing indicator immediately
     showLoading();
